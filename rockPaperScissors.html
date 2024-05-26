@@ -7,7 +7,41 @@
 </head>
 <body>
     <script>
-        console.log("Hello world")
+
+        // testing if the javascript works
+        // console.log("Hello world")
+       
+
+        // writing logic to get the computer choice
+        function getComputerChoice (min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+        } // min inclusive max excluded
+
+        function translateComputerChoice () {
+            if (getComputerChoice = 1) {
+                translateComputerChoice = "rock";
+            } else if (getComputerChoice = 2) {
+                translateComputerChoice = "paper"
+            } else {
+                translateComputerChoice = "scissors"
+            }
+        }
+
+
+
+
+
+        console.log(getComputerChoice(1,4))
+        console.log(translateComputerChoice(get))
+
+
+
+
+
+
+
     </script>
 
 
