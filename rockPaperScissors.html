@@ -16,26 +16,28 @@
         function getComputerChoice (min, max) {
             const minCeiled = Math.ceil(min);
             const maxFloored = Math.floor(max);
-            return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
-        } // min inclusive max excluded
+            let computerNumber = Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+            // console.log(computerNumber)
 
-        function translateComputerChoice () {
-            if (getComputerChoice = 1) {
-                translateComputerChoice = "rock";
-            } else if (getComputerChoice = 2) {
-                translateComputerChoice = "paper"
+            let computerChoice = "";
+
+            if (computerNumber == 1) {
+                computerChoice = "Rock";
+            } else if (computerNumber == 2) {
+                computerChoice = "Paper";   
             } else {
-                translateComputerChoice = "scissors"
+                computerChoice = "Scissors";
             }
-        }
+            // console.log(computerChoice)
+ 
 
+            return computerChoice;
+        } // min inclusive max excluded
 
 
 
 
         console.log(getComputerChoice(1,4))
-        console.log(translateComputerChoice(get))
-
 
 
 
