@@ -34,15 +34,34 @@
             return computerChoice;
         } // min inclusive max excluded
 
-
-
-
         console.log(getComputerChoice(1,4))
 
 
+        // writing logic to get the human choice
+
+        let humanNumber = prompt("Choose either 'Rock' (1), 'Paper (2), or Scissors (3)", );
 
 
+        function getHumanChoice (humanNumber) {
+            let humanChoice;
+            
 
+            console.log(humanChoice)
+
+            if (humanNumber = 1) {
+                humanChoice = "Rock";
+            } else if (humanNumber = 2) {
+                humanChoice = "Paper";   
+            } else if (humanNumber == 3) { 
+                humanChoice = "Scissors";
+            } else {
+                humanChoice = "ERROR Please only type the number and Choose either 'Rock' (1), 'Paper (2), or Scissors (3)";
+            }
+
+            return humanChoice;
+        }
+
+        console.log(getHumanChoice())
 
     </script>
 
