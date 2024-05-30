@@ -22,19 +22,16 @@
             const minCeiled = Math.ceil(min);
             const maxFloored = Math.floor(max);
             let computerNumber = Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
-            // console.log(computerNumber)
 
             let computerChoice = "";
 
             if (computerNumber == 1) {
-                computerChoice = "Rock";
+                computerChoice = "rock";
             } else if (computerNumber == 2) {
-                computerChoice = "Paper";   
+                computerChoice = "paper";   
             } else {
-                computerChoice = "Scissors";
+                computerChoice = "scissors";
             }
-            // console.log(computerChoice)
- 
 
             return computerChoice;
         } // min inclusive max excluded
@@ -45,24 +42,30 @@
         // writing logic to get the human choice
 
         function getHumanChoice () {
-            let humanChoice = "";
-            let humanNumber =  prompt("Choose either 'Rock' (1), 'Paper (2), or Scissors (3)", );
-
-           // while (!(humanChoice == 1 || humanChoice == 2 || humanChoice == 3)) 
-            if (humanNumber == 1) {
-                humanChoice = "Rock";
-            } else if (humanNumber == 2) {
-                humanChoice = "Paper";   
-            } else if (humanNumber == 3) { 
-                humanChoice = "Scissors";
-            } else {
-                humanChoice = "ERROR Please only type the number and Choose either 'Rock' (1), 'Paper (2), or Scissors (3)";
-            }
-
-            return humanChoice;
+            let humanNumber =  prompt("Choose either 'rock', 'paper', or scissors", );
+            return humanNumber;
         }
 
         console.log(getHumanChoice())
+
+        function playRound(humanChoice, computerChoice) {
+            
+            humanChoice
+            console.log(humanChoice)
+            
+
+
+
+
+
+
+        }
+
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
+
 
     </script>
 
