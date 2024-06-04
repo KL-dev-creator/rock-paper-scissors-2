@@ -62,9 +62,6 @@
                 default:
                     console.log("Invalid Option: Please write either 'rock' or 'paper' or 'scissors'")
             }
-
-
-
             return humanChoice;
         }
 
@@ -79,9 +76,27 @@
 
         function playRound(humanChoice, computerChoice) {
 
-
-
-
+            if (humanChoice = computerChoice) {
+                console.log("Tie!, Nobody gets a point")
+            } else if (humanChoice = "rock") {
+                if (computerChoice = "paper") {
+                    console.log("Rock loses to paper, the Computer gets a point.")
+                } else if (computerChoice = "scissors") {
+                    console.log("Rock wins againsts scissors, you get a point.")
+                }
+            } else if (humanChoice = "paper") {
+                if (computerChoice = "rock") {
+                    console.log("Paper wins againsts rock, you get a point.")
+                } else if (computerChoice = "scissors") {
+                    console.log("Paper loses to scissors, the Computer gets a point.")
+                } 
+            } else if (humanChoice = "scissors") {
+                if (computerChoice = "rock") {
+                    console.log("scissors loses against rock, the Computer gets a point")
+                } else if (computerChoice = "paper") {
+                    console.log("paper loses to scissors, you get a point.")
+                } 
+            }
         }
 
         const humanSelection = getHumanChoice();
