@@ -17,11 +17,18 @@
 
 
 
+
+        // function getComputerChoice (min, max) {
+        //     const minCeiled = Math.ceil(min);
+        //     const maxFloored = Math.floor(max);
+        //     let computerNumber = Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+
+
         // writing logic to get the computer choice
-        function getComputerChoice (min, max) {
-            const minCeiled = Math.ceil(min);
-            const maxFloored = Math.floor(max);
-            let computerNumber = Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+        function getComputerChoice () {
+            const minCeiled = Math.ceil(1);
+            const maxFloored = Math.floor(4);
+            let computerNumber = Math.floor(Math.random() * (4-1) + 1);
 
             let computerChoice = "";
 
@@ -36,65 +43,59 @@
             return computerChoice;
         } // min inclusive max excluded
 
-        console.log(getComputerChoice(1,4))
-
-
         // writing logic to get the human choice
 
         let humanChoice =  prompt("Choose either 'rock', 'paper', or scissors", );
         humanChoice = humanChoice.toLowerCase()
-        let humanChops = humanChoice;
-        console.log(humanChoice)
-
-
+        
         function getHumanChoice () {
-            console.log(humanChoice)
-            switch(humanChoice) {
-                case "rock":
-                    humanChoice = "rock";
-                break;
-                case "paper":
-                    humanChoice = "paper"
-                break;
-                case "scissors":
-                    humanChoice = "scissors"
-                break;
-                default:
-                    console.log("Invalid Option: Please write either 'rock' or 'paper' or 'scissors'")
+ 
+
+            do {
+                switch(humanChoice) {
+                    case "rock":
+                        humanChoice = "rock";
+                    break;
+                    case "paper":
+                        humanChoice = "paper"
+                    break;
+                    case "scissors":
+                        humanChoice = "scissors"
+                    break;
+                    default:
+                        console.log("Invalid Option: Please write either 'rock' or 'paper' or 'scissors'")
+                }
             }
+            while (humanChoice != "rock" | "paper" | "scissors")
+            
             return humanChoice;
         }
-
-        console.log(humanChoice)
-
-
-
-
-
 
         // Writing logic to play a single round
 
         function playRound(humanChoice, computerChoice) {
+            console.log(humanChoice)
+            console.log(computerChoice)
 
-            if (humanChoice = computerChoice) {
+            if (humanChoice == computerChoice) {
                 console.log("Tie!, Nobody gets a point")
-            } else if (humanChoice = "rock") {
-                if (computerChoice = "paper") {
+            } else if (humanChoice == "rock") {
+                if (computerChoice == "paper") {
                     console.log("Rock loses to paper, the Computer gets a point.")
-                } else if (computerChoice = "scissors") {
+                } else if (computerChoice == "scissors") {
                     console.log("Rock wins againsts scissors, you get a point.")
                 }
-            } else if (humanChoice = "paper") {
-                if (computerChoice = "rock") {
+            } else if (humanChoice == "paper") {
+                if (computerChoice == "rock") {
                     console.log("Paper wins againsts rock, you get a point.")
                 } else if (computerChoice = "scissors") {
                     console.log("Paper loses to scissors, the Computer gets a point.")
                 } 
-            } else if (humanChoice = "scissors") {
-                if (computerChoice = "rock") {
-                    console.log("scissors loses against rock, the Computer gets a point")
+            } else if (humanChoice == "scissors") {
+                if (computerChoice == "rock") {
+                    console.log("Scissors loses against rock, the Computer gets a point")
                 } else if (computerChoice = "paper") {
-                    console.log("paper loses to scissors, you get a point.")
+                    console.log("Scissors wins against paper, you get a point.")
                 } 
             }
         }
