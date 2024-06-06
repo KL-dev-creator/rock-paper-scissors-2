@@ -45,13 +45,28 @@
 
         // writing logic to get the human choice
 
-        let humanChoice =  prompt("Choose either 'rock', 'paper', or scissors", );
-        humanChoice = humanChoice.toLowerCase()
-        
-        function getHumanChoice () {
- 
 
-            do {
+        // while (humanChoice != "rock" | "paper" | "scissors")
+        
+
+
+        function getHumanChoice () {
+
+            let humanChoice;
+
+                while (true) {
+                    humanChoice =  prompt("Choose either 'rock', 'paper', or scissors", ).toLowerCase();
+
+                    console.log(humanChoice)
+
+                while (humanChoice !== "rock" || "paper" || "scissors") {
+                    humanChoice = prompt("Invalid option: please choose either 'rock', 'paper', or scissors", ).toLowerCase();
+
+                    console.log(humanChoice)
+                }
+
+                }
+
                 switch(humanChoice) {
                     case "rock":
                         humanChoice = "rock";
@@ -65,9 +80,7 @@
                     default:
                         console.log("Invalid Option: Please write either 'rock' or 'paper' or 'scissors'")
                 }
-            }
-            while (humanChoice != "rock" | "paper" | "scissors")
-            
+
             return humanChoice;
         }
 
