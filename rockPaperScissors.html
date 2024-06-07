@@ -48,26 +48,23 @@
 
         // while (humanChoice != "rock" | "paper" | "scissors")
         
+        function humanPrompt () {
+            let humanChoice =  prompt("Choose either 'rock', 'paper', or scissors", ).toLowerCase();
+
+            return humanChoice;
+
+        }
 
 
-        function getHumanChoice () {
 
-            let humanChoice;
 
-                while (true) {
-                    humanChoice =  prompt("Choose either 'rock', 'paper', or scissors", ).toLowerCase();
+        function getHumanChoice (humanChoice) {
 
-                    console.log(humanChoice)
+            // let humanChoice =  prompt("Choose either 'rock', 'paper', or scissors", ).toLowerCase();
 
-                while (humanChoice !== "rock" || "paper" || "scissors") {
-                    humanChoice = prompt("Invalid option: please choose either 'rock', 'paper', or scissors", ).toLowerCase();
+                if (humanChoice == "rock" || humanChoice == "paper" || humanChoice == "scissors") {
 
-                    console.log(humanChoice)
-                }
-
-                }
-
-                switch(humanChoice) {
+                    switch(humanChoice) {
                     case "rock":
                         humanChoice = "rock";
                     break;
@@ -77,8 +74,13 @@
                     case "scissors":
                         humanChoice = "scissors"
                     break;
-                    default:
-                        console.log("Invalid Option: Please write either 'rock' or 'paper' or 'scissors'")
+                    // default:
+                    //     console.log("Invalid Option: Please write either 'rock' or 'paper' or 'scissors'")
+                    }
+
+                } else {
+                    window.alert("Invalid option: chooce either 'rock', 'paper', or 'scissors'");
+                    humanPrompt();
                 }
 
             return humanChoice;
