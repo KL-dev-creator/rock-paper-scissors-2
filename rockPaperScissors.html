@@ -45,46 +45,16 @@
 
         // writing logic to get the human choice
 
+        function getHumanChoice() {
+                let humanChoice;
 
-        // while (humanChoice != "rock" | "paper" | "scissors")
-        
-        function humanPrompt () {
-            let humanChoice =  prompt("Choose either 'rock', 'paper', or scissors", ).toLowerCase();
-
-            return humanChoice;
-
-        }
-
-
-
-
-        function getHumanChoice (humanChoice) {
-
-            // let humanChoice =  prompt("Choose either 'rock', 'paper', or scissors", ).toLowerCase();
-
-                if (humanChoice == "rock" || humanChoice == "paper" || humanChoice == "scissors") {
-
-                    switch(humanChoice) {
-                    case "rock":
-                        humanChoice = "rock";
-                    break;
-                    case "paper":
-                        humanChoice = "paper"
-                    break;
-                    case "scissors":
-                        humanChoice = "scissors"
-                    break;
-                    // default:
-                    //     console.log("Invalid Option: Please write either 'rock' or 'paper' or 'scissors'")
-                    }
-
-                } else {
-                    window.alert("Invalid option: chooce either 'rock', 'paper', or 'scissors'");
-                    humanPrompt();
+                humanChoice = prompt("Choose either 'rock', 'paper', or scissors", ).toLowerCase();
+                while (humanChoice !== "rock" && humanChoice !== "paper" && humanChoice !== "scissors") {
+                    humanChoice = prompt("Invalid option please either either: 'rock', 'paper', or scissors", ).toLowerCase();
                 }
 
-            return humanChoice;
-        }
+                return humanChoice;
+            }
 
         // Writing logic to play a single round
 
