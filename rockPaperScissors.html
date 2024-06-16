@@ -19,27 +19,52 @@
 
 
         // writing logic to get the computer choice
-        function getComputerChoice () {
-            const minCeiled = Math.ceil(1);
-            const maxFloored = Math.floor(4);
-            let computerNumber = Math.floor(Math.random() * (4-1) + 1);
+        // function getComputerChoice () {
+        //     const minCeiled = Math.ceil(1);
+        //     const maxFloored = Math.floor(4);
+        //     let computerNumber = Math.floor(Math.random() * (4-1) + 1);
 
-            let computerChoice = "";
+        //     let computerChoice = "";
 
-            if (computerNumber == 1) {
-                computerChoice = "rock";
-            } else if (computerNumber == 2) {
-                computerChoice = "paper";   
-            } else {
-                computerChoice = "scissors";
-            }
+        //     if (computerNumber == 1) {
+        //         computerChoice = "rock";
+        //     } else if (computerNumber == 2) {
+        //         computerChoice = "paper";   
+        //     } else {
+        //         computerChoice = "scissors";
+        //     }
 
-            return computerChoice;
-        } // min inclusive max excluded
+        //     return computerChoice;
+        // } 
 
         // writing logic to get the human choice
 
-        function getHumanChoice() {
+        // function getHumanChoice() {
+        //         let humanChoice;
+
+        //         humanChoice = prompt("Choose either 'rock', 'paper', or scissors", ).toLowerCase();
+        //         while (humanChoice !== "rock" && humanChoice !== "paper" && humanChoice !== "scissors") {
+        //             humanChoice = prompt("Invalid option please either either: 'rock', 'paper', or scissors", ).toLowerCase();
+        //         }
+
+        //         return humanChoice;
+        //     }
+
+        // Writing logic to play a single round
+
+
+
+        // const humanSelection = getHumanChoice();
+        // const computerSelection = getComputerChoice();
+
+        // playRound(humanSelection, computerSelection);
+
+        // console.log(humanScore)
+        // console.log(computerScore)
+
+        function playGame () {
+
+            function getHumanChoice() {
                 let humanChoice;
 
                 humanChoice = prompt("Choose either 'rock', 'paper', or scissors", ).toLowerCase();
@@ -50,19 +75,26 @@
                 return humanChoice;
             }
 
-        // Writing logic to play a single round
+            function getComputerChoice () {
+                const minCeiled = Math.ceil(1);
+                const maxFloored = Math.floor(4);
+                let computerNumber = Math.floor(Math.random() * (4-1) + 1);
 
+                let computerChoice = "";
 
+                if (computerNumber == 1) {
+                    computerChoice = "rock";
+                } else if (computerNumber == 2) {
+                    computerChoice = "paper";   
+                } else {
+                    computerChoice = "scissors";
+                }
 
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+                return computerChoice;
+            } 
 
-        // playRound(humanSelection, computerSelection);
-
-        // console.log(humanScore)
-        // console.log(computerScore)
-
-        function playGame () {
+            const humanSelection = getHumanChoice();
+            const computerSelection = getComputerChoice();
 
             function playRound(humanChoice, computerChoice) {
 
@@ -102,13 +134,13 @@
                 }
             }
 
-        for (let numberOfRounds = 0; numberOfRounds < 5; numberOfRounds ++)
-
-        playRound(humanSelection, computerSelection);
-
         }
 
-        playGame ();
+
+        for (let numberOfRounds = 0; numberOfRounds < 5; numberOfRounds ++) {
+            playGame()
+        }     
+            
 
     </script>
 
