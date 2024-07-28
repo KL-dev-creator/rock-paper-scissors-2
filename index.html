@@ -6,7 +6,23 @@
     <title>Rock Paper Scissors Project</title>
 </head>
 <body>
+    <div class = 'container'>
+        <button id = "rock">Rock</button>
+        <button id = "paper">Paper</button>
+        <button id = "scissors">Scissors</button>
+    </div>
+    <div class = 'outcome'>
+
+    </div>
+
     <script>
+
+        const rockButton = document.querySelector('.rock')
+        const paperButton = document.querySelector('.paper')
+        const scissorsButton = document.querySelector('.scissors')
+        const outcomeDiv = document.querySelector('.outcome')
+
+
        
         // writing logic to get the computer choice
 
@@ -28,21 +44,43 @@
             return computerChoice;
         } 
 
+
+        rockButton.addEventListener('click', () => {
+            const computerChoice = getComputerChoice()
+            const humanChoice = 'rock'
+            playRound(humanSelection, computerSelection);
+        })
+
+        paperButton.addEventListener('click', () => {
+            const computerChoice = getComputerChoice()
+            const humanChoice = 'paper'
+            playRound(humanSelection, computerSelection);
+        })
+
+        scissorsButton.addEventListener('click', () => {
+            const computerChoice = getComputerChoice()
+            const humanChoice = 'scissors'
+            playRound(humanSelection, computerSelection);
+        })
+
+
+
         // writing logic to get the human choice
 
         function getHumanChoice() {
             let humanChoice;
 
-            // This prompt and while loop checks to see whether the Human entered a valid input
-            humanChoice = prompt("Choose either 'rock', 'paper', or scissors", ).toLowerCase();
-            while (humanChoice !== "rock" && humanChoice !== "paper" && humanChoice !== "scissors") {
-                humanChoice = prompt("Invalid option please either either: 'rock', 'paper', or scissors", ).toLowerCase();
-            }
+            // btn.addEventListener('click', (event) => {
+            //     humanChoice = "rock";
+            // });
+
+
+
+
+
 
             return humanChoice;
             }
-
-        // Writing logic to play a single round
 
         function playGame() {
 
@@ -50,12 +88,13 @@
             let computerScore = 0;
 
             // This loop makes it so that 5 rounds are played
-            for (let numberOfRounds = 0; numberOfRounds < 5; numberOfRounds ++) {
+            for (let numberOfRounds = 0; numberOfRounds < 1; numberOfRounds ++) {
                 const humanSelection = getHumanChoice();
                 const computerSelection = getComputerChoice();
 
                 function playRound(humanChoice, computerChoice) {
                     if (humanChoice == computerChoice) {
+                        // FIND OUT HOW TO USE .INNERTEXT HERE
                         console.log("Both the Human and the Computer chose the same option it is a Tie! Nobody gets a point")
                     } else if (humanChoice == "rock") {
                         if (computerChoice == "paper") {
@@ -103,6 +142,8 @@
     
     // Function to start playing the game
     playGame()
+
+    const button = document.querySelector('button');
 
     </script>
 
