@@ -22,6 +22,9 @@
         const scissorsButton = document.querySelector('.scissors')
         const outcomeDiv = document.querySelector('.outcome')
 
+        let humanScore = 0;
+        let computerScore = 0;
+        let roundCounter = 0;
 
        
         // writing logic to get the computer choice
@@ -42,103 +45,92 @@
             }
 
             return computerChoice;
-        } 
-
-
-        rockButton.addEventListener('click', () => {
-            const computerChoice = getComputerChoice()
-            const humanChoice = 'rock'
-            playRound(humanSelection, computerSelection);
-        })
-
-        paperButton.addEventListener('click', () => {
-            const computerChoice = getComputerChoice()
-            const humanChoice = 'paper'
-            playRound(humanSelection, computerSelection);
-        })
-
-        scissorsButton.addEventListener('click', () => {
-            const computerChoice = getComputerChoice()
-            const humanChoice = 'scissors'
-            playRound(humanSelection, computerSelection);
-        })
-
-
-
-        // writing logic to get the human choice
-
-        function getHumanChoice() {
-            let humanChoice;
-
-            // btn.addEventListener('click', (event) => {
-            //     humanChoice = "rock";
-            // });
-
-
-
-
-
-
-            return humanChoice;
-            }
+        }
 
         function playGame() {
+                rock.addEventListener('click', () => {
+                        const computerChoice = getComputerChoice()
+                        const humanChoice = 'rock'
+                        roundCounter += 1
+                        playRound(humanChoice, computerChoice)
+                })
 
-            let humanScore = 0;
-            let computerScore = 0;
+                paper.addEventListener('click', () => {
+                        const computerChoice = getComputerChoice()
+                        const humanChoice = 'paper'
+                        roundCounter += 1
+                        playRound(humanChoice, computerChoice)
+                })
 
-            // This loop makes it so that 5 rounds are played
-            for (let numberOfRounds = 0; numberOfRounds < 1; numberOfRounds ++) {
-                const humanSelection = getHumanChoice();
+                scissors.addEventListener('click', () => {
+                        const computerChoice = getComputerChoice()
+                        const humanChoice = 'scissors'
+                        playRound(humanChoice, computerChoice)
+                })
+                
+
                 const computerSelection = getComputerChoice();
 
                 function playRound(humanChoice, computerChoice) {
+                    const p = document.createElement('p')
+                    const p2 = document.createElement('p2')
+
+                    // possiblity for round counter to be added here
+
+
                     if (humanChoice == computerChoice) {
-                        // FIND OUT HOW TO USE .INNERTEXT HERE
-                        console.log("Both the Human and the Computer chose the same option it is a Tie! Nobody gets a point")
+                        p.innerText = "Both the Human and the Computer chose the same option it is a Tie! Nobody gets a point"
+                        p2.innerText = "The current score is Human: " + humanScore + " Computer: " + computerScore
+                        outcomeDiv.appendChild(p)
+                        outcomeDiv.appendChild(p2)
                     } else if (humanChoice == "rock") {
                         if (computerChoice == "paper") {
-                            console.log("Rock loses to paper, the Computer gets a point.")
                             computerScore += 1;
+                            p.innerText = "Rock loses to paper, the Computer gets a point."
+                            p2.innerText = "The current score is Human: " + humanScore + " Computer: " + computerScore
+                            outcomeDiv.appendChild(p)
+                            outcomeDiv.appendChild(p2)
                         } else if (computerChoice == "scissors") {
-                            console.log("Rock wins againsts scissors, you get a point.")
                             humanScore += 1;
+                            p.innerText = "Rock wins againsts scissors, you get a point."
+                            p2.innerText = "The current score is Human: " + humanScore + " Computer: " + computerScore
+                            outcomeDiv.appendChild(p)
+                            outcomeDiv.appendChild(p2)
                         }
                     } else if (humanChoice == "paper") {
                         if (computerChoice == "rock") {
-                            console.log("Paper wins againsts rock, you get a point.")
                             humanScore += 1;
+                            p.innerText = "Paper wins againsts rock, you get a point."
+                            p2.innerText = "The current score is Human: " + humanScore + " Computer: " + computerScore
+                            outcomeDiv.appendChild(p)
+                            outcomeDiv.appendChild(p2)
                         } else if (computerChoice = "scissors") {
-                            console.log("Paper loses to scissors, the Computer gets a point.")
                             computerScore += 1;
+                            p.innerText = "Paper loses to scissors, the Computer gets a point."
+                            p2.innerText = "The current score is Human: " + humanScore + " Computer: " + computerScore
+                            outcomeDiv.appendChild(p)
+                            outcomeDiv.appendChild(p2)
                         } 
                     } else if (humanChoice == "scissors") {
                         if (computerChoice == "rock") {
-                            console.log("Scissors loses against rock, the Computer gets a point")
                             computerScore += 1;
+                            p.innerText = "Scissors loses against rock, the Computer gets a point"
+                            p2.innerText = "The current score is Human: " + humanScore + " Computer: " + computerScore
+                            outcomeDiv.appendChild(p)
+                            outcomeDiv.appendChild(p2)
                         } else if (computerChoice = "paper") {
-                            console.log("Scissors wins against paper, you get a point.")
                             humanScore += 1;
+                            p.innerText = "Scissors wins against paper, you get a point."
+                            p2.innerText = "The current score is Human: " + humanScore + " Computer: " + computerScore
+                            outcomeDiv.appendChild(p)
+                            outcomeDiv.appendChild(p2)
                         } 
                     }
 
                 }
 
-                // This part shows the current score of the round
-                playRound(humanSelection, computerSelection);
-                console.log("The current score is Human: " + humanScore + " Computer: " + computerScore)
             }
-
-            //This part determines who the winner is after 5 rounds
-
-            if (humanScore > computerScore) {
-                console.log("The Human is the winner")
-            } else if (computerScore > humanScore) {
-                console.log("The Computer is the winner")
-            } else {
-                console.log("There is no winner, it is a tie")
-            }
-        }
+        
     
     // Function to start playing the game
     playGame()
