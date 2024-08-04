@@ -25,7 +25,6 @@
         let humanScore = 0;
         let computerScore = 0;
         let roundCounter = 0;
-
        
         // writing logic to get the computer choice
 
@@ -48,17 +47,17 @@
         }
 
         function playGame() {
+                const computerSelection = getComputerChoice();
+
                 rock.addEventListener('click', () => {
                         const computerChoice = getComputerChoice()
                         const humanChoice = 'rock'
-                        roundCounter += 1
                         playRound(humanChoice, computerChoice)
                 })
 
                 paper.addEventListener('click', () => {
                         const computerChoice = getComputerChoice()
                         const humanChoice = 'paper'
-                        roundCounter += 1
                         playRound(humanChoice, computerChoice)
                 })
 
@@ -67,17 +66,17 @@
                         const humanChoice = 'scissors'
                         playRound(humanChoice, computerChoice)
                 })
-                
-
-                const computerSelection = getComputerChoice();
 
                 function playRound(humanChoice, computerChoice) {
+
+                    if (roundCounter == 5) {
+                        console.log("Testing my game")
+
+                        
+                    } else {
                     const p = document.createElement('p')
                     const p2 = document.createElement('p2')
-
-                    // possiblity for round counter to be added here
-
-
+                    roundCounter += 1;
                     if (humanChoice == computerChoice) {
                         p.innerText = "Both the Human and the Computer chose the same option it is a Tie! Nobody gets a point"
                         p2.innerText = "The current score is Human: " + humanScore + " Computer: " + computerScore
@@ -130,6 +129,10 @@
                 }
 
             }
+
+            }
+
+            
         
     
     // Function to start playing the game
