@@ -46,37 +46,56 @@
             return computerChoice;
         }
 
+        function checkForWinner (humanScore, computerScore) {
+            if (roundCounter == 5) {
+                console.log("THe game should be over by now")
+
+            } else {
+                console.log("testing to see if this works")
+            }
+        }
+
         function playGame() {
                 const computerSelection = getComputerChoice();
+
+                
 
                 rock.addEventListener('click', () => {
                         const computerChoice = getComputerChoice()
                         const humanChoice = 'rock'
+                        roundCounter += 1;
                         playRound(humanChoice, computerChoice)
+                        checkForWinner(humanScore, computerScore)
                 })
 
                 paper.addEventListener('click', () => {
                         const computerChoice = getComputerChoice()
                         const humanChoice = 'paper'
+                        roundCounter += 1;
                         playRound(humanChoice, computerChoice)
+                        checkForWinner(humanScore, computerScore)
                 })
 
                 scissors.addEventListener('click', () => {
                         const computerChoice = getComputerChoice()
                         const humanChoice = 'scissors'
+                        roundCounter += 1;
                         playRound(humanChoice, computerChoice)
+                        checkForWinner(humanScore, computerScore)
+
                 })
 
                 function playRound(humanChoice, computerChoice) {
 
-                    if (roundCounter == 5) {
-                        console.log("Testing my game")
-
-                        
-                    } else {
+                    // if (roundCounter > 5) {
+                    //     playRound(humanChoice, computerChoice)
+                    //     const p3 = document.createElement('p3')
+                    //     p3.innerText = "After five rounds the Human has " + humanScore + " and the Computer has " + computerScore
+                    //     outcomeDiv.append(p3)
+                    // } else {
                     const p = document.createElement('p')
                     const p2 = document.createElement('p2')
-                    roundCounter += 1;
+                    // roundCounter += 1;
                     if (humanChoice == computerChoice) {
                         p.innerText = "Both the Human and the Computer chose the same option it is a Tie! Nobody gets a point"
                         p2.innerText = "The current score is Human: " + humanScore + " Computer: " + computerScore
@@ -130,7 +149,7 @@
 
             }
 
-            }
+            // }
 
             
         
