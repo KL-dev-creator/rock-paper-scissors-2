@@ -22,9 +22,10 @@
         const scissorsButton = document.querySelector('.scissors')
         const outcomeDiv = document.querySelector('.outcome')
 
+
         let humanScore = 0;
         let computerScore = 0;
-        let roundCounter = 0;
+        let roundCounter = 1;
        
         // writing logic to get the computer choice
 
@@ -47,23 +48,31 @@
         }
 
         function checkForWinner (humanScore, computerScore) {
-            if (roundCounter == 5) {
-                console.log("THe game should be over by now")
-
+            const p3 = document.createElement('p3')
+            var lineBreak = document.createElement("br");
+            if (humanScore == 5) {
+                roundCounter += 0;
+                outcomeDiv.appendChild(lineBreak)
+                p3.innerText = "The Human has " + humanScore + " points while the Computer has " +computerScore + " points. The Human is the winner!"
+                outcomeDiv.appendChild(p3)
+            } else if (computerScore == 5) {
+                roundCounter += 0;
+                outcomeDiv.appendChild(lineBreak)
+                p3.innerText = "The Computer has " + computerScore + " points while the Human has " + humanScore + " points. The Computer is the winner!"
+                outcomeDiv.appendChild(p3)
             } else {
-                console.log("testing to see if this works")
+                // outcomeDiv.appendChild(lineBreak)
+                // p3.innerText = "The current round is " + roundCounter
+                // outcomeDiv.appendChild(p3)
             }
         }
 
         function playGame() {
                 const computerSelection = getComputerChoice();
 
-                
-
                 rock.addEventListener('click', () => {
                         const computerChoice = getComputerChoice()
                         const humanChoice = 'rock'
-                        roundCounter += 1;
                         playRound(humanChoice, computerChoice)
                         checkForWinner(humanScore, computerScore)
                 })
@@ -71,7 +80,6 @@
                 paper.addEventListener('click', () => {
                         const computerChoice = getComputerChoice()
                         const humanChoice = 'paper'
-                        roundCounter += 1;
                         playRound(humanChoice, computerChoice)
                         checkForWinner(humanScore, computerScore)
                 })
@@ -79,23 +87,16 @@
                 scissors.addEventListener('click', () => {
                         const computerChoice = getComputerChoice()
                         const humanChoice = 'scissors'
-                        roundCounter += 1;
                         playRound(humanChoice, computerChoice)
                         checkForWinner(humanScore, computerScore)
-
                 })
 
                 function playRound(humanChoice, computerChoice) {
 
-                    // if (roundCounter > 5) {
-                    //     playRound(humanChoice, computerChoice)
-                    //     const p3 = document.createElement('p3')
-                    //     p3.innerText = "After five rounds the Human has " + humanScore + " and the Computer has " + computerScore
-                    //     outcomeDiv.append(p3)
-                    // } else {
                     const p = document.createElement('p')
                     const p2 = document.createElement('p2')
-                    // roundCounter += 1;
+                    roundCounter += 1;
+
                     if (humanChoice == computerChoice) {
                         p.innerText = "Both the Human and the Computer chose the same option it is a Tie! Nobody gets a point"
                         p2.innerText = "The current score is Human: " + humanScore + " Computer: " + computerScore
@@ -147,11 +148,7 @@
 
                 }
 
-            }
-
-            // }
-
-            
+            }            
         
     
     // Function to start playing the game
