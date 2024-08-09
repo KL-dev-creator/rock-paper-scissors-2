@@ -26,6 +26,12 @@
         let humanScore = 0;
         let computerScore = 0;
         let roundCounter = 1;
+
+        function deleteButtons () {
+            // var element = document.getElementById("parent");
+            // element.
+            //SEE THE SHOPPING LIST EXAMPLE LATER
+        }
        
         // writing logic to get the computer choice
 
@@ -49,21 +55,22 @@
 
         function checkForWinner (humanScore, computerScore) {
             const p3 = document.createElement('p3')
-            var lineBreak = document.createElement("br");
+            const lineBreak = document.createElement("br");
             if (humanScore == 5) {
                 roundCounter += 0;
                 outcomeDiv.appendChild(lineBreak)
-                p3.innerText = "The Human has " + humanScore + " points while the Computer has " +computerScore + " points. The Human is the winner!"
+                p3.innerText = "\n The Human has " + humanScore + " points while the Computer has " +computerScore + " points. The Human is the winner!"
                 outcomeDiv.appendChild(p3)
+                deleteButtons()
+                
             } else if (computerScore == 5) {
                 roundCounter += 0;
                 outcomeDiv.appendChild(lineBreak)
-                p3.innerText = "The Computer has " + computerScore + " points while the Human has " + humanScore + " points. The Computer is the winner!"
+                p3.innerText = "\n The Computer has " + computerScore + " points while the Human has " + humanScore + " points. The Computer is the winner!"
                 outcomeDiv.appendChild(p3)
+                deleteButtons()
             } else {
-                // outcomeDiv.appendChild(lineBreak)
-                // p3.innerText = "The current round is " + roundCounter
-                // outcomeDiv.appendChild(p3)
+
             }
         }
 
