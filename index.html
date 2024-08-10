@@ -17,6 +17,7 @@
 
     <script>
 
+        const container = document.querySelector('.container')
         const rockButton = document.querySelector('.rock')
         const paperButton = document.querySelector('.paper')
         const scissorsButton = document.querySelector('.scissors')
@@ -28,9 +29,7 @@
         let roundCounter = 1;
 
         function deleteButtons () {
-            // var element = document.getElementById("parent");
-            // element.
-            //SEE THE SHOPPING LIST EXAMPLE LATER
+            container.remove()
         }
        
         // writing logic to get the computer choice
